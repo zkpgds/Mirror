@@ -1,8 +1,7 @@
 export default function (time) {
-  const months = 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec'.split(',')
   const date = new Date(time)
-  const day = date.getDate()
-  const index = date.getMonth()
+  const day = (date.getDate()).toString().padStart(2,'0')
+  const month = (date.getMonth() + 1).toString().padStart(2,'0')
   const year = date.getFullYear()
-  return `${months[index]} ${day}, ${year}`
+  return `${year}/${month}/${day}`
 }

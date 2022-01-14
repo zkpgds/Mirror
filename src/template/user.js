@@ -1,6 +1,7 @@
 import emailIcon from '../svg/email.svg'
 import linkIcon from '../svg/link.svg'
 import githubIcon from '../svg/github.svg'
+import runningIcon from '../svg/running.svg'
 import $ from '../helper/query'
 
 class User {
@@ -12,6 +13,10 @@ class User {
   get email() {
     const email = this.user.email || this.user.organizationBillingEmail
     return email ? `<a target="_blank" href="mailto:${email}">${emailIcon}</a>` : ''
+  }
+
+  get running() {
+    return `<a target="_blank" href="https://running.leeyom.top">${runningIcon}</a>`
   }
 
   get website() {
@@ -40,6 +45,7 @@ class User {
       website,
       bio,
       container,
+      running,
     } = this
 
     container.html(`
@@ -49,6 +55,7 @@ class User {
       <h1>${user.name || user.login}</h1>
       ${bio}
       <div class="social">
+        ${running}
         <a target="_blank" href="${user.url}">${githubIcon}</a>
         ${website}
         ${email}
