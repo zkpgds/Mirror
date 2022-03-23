@@ -2,6 +2,9 @@ import emailIcon from '../svg/email.svg'
 import linkIcon from '../svg/link.svg'
 import githubIcon from '../svg/github.svg'
 import runningIcon from '../svg/running.svg'
+import rssIcon from '../svg/rss.svg'
+import twitterIcon from '../svg/twitter.svg'
+import telegramIcon from "../svg/telegram.svg"
 import $ from '../helper/query'
 
 class User {
@@ -17,6 +20,18 @@ class User {
 
   get running() {
     return `<a target="_blank" href="https://running.leeyom.top">${runningIcon}</a>`
+  }
+
+  get rss() {
+    return `<a target="_blank" href="https://raw.githubusercontent.com/superleeyom/blog/master/feed.xml">${rssIcon}</a>`
+  }
+
+  get twitter() {
+    return `<a target="_blank" href="https://twitter.com/super_leeyom">${twitterIcon}</a>`
+  }
+
+  get telegram() {
+    return `<a target="_blank" href="https://t.me/super_leeyom">${telegramIcon}</a>`
   }
 
   get website() {
@@ -46,6 +61,9 @@ class User {
       bio,
       container,
       running,
+      twitter,
+      telegram,
+      rss,
     } = this
 
     container.html(`
@@ -59,6 +77,9 @@ class User {
         <a target="_blank" href="${user.url}">${githubIcon}</a>
         ${website}
         ${email}
+        ${twitter}
+        ${telegram}
+        ${rss}
       </div>
     `)
   }
