@@ -18,20 +18,20 @@ class User {
     return email ? `<a target="_blank" href="mailto:${email}">${emailIcon}</a>` : ''
   }
 
-  get running() {
-    return `<a target="_blank" href="https://running.leeyom.top">${runningIcon}</a>`
-  }
+  // get running() {
+  //   return `<a target="_blank" href="https://running.leeyom.top">${runningIcon}</a>`
+  // }
 
   get rss() {
-    return `<a target="_blank" href="https://raw.githubusercontent.com/superleeyom/blog/master/feed.xml">${rssIcon}</a>`
+    return `<a target="_blank" href="https://raw.githubusercontent.com/zkpgds/blog/master/feed.xml">${rssIcon}</a>`
   }
 
   get twitter() {
-    return `<a target="_blank" href="https://twitter.com/super_leeyom">${twitterIcon}</a>`
+    return `<a target="_blank" href="https://twitter.com/zkpgds">${twitterIcon}</a>`
   }
 
   get telegram() {
-    return `<a target="_blank" href="https://t.me/super_leeyom">${telegramIcon}</a>`
+    return `<a target="_blank" href="https://t.me/zkpgds">${telegramIcon}</a>`
   }
 
   get website() {
@@ -73,13 +73,13 @@ class User {
       <h1>${user.name || user.login}</h1>
       ${bio}
       <div class="social">
-        ${running}
+<!--        ${running}-->
         <a target="_blank" href="${user.url}">${githubIcon}</a>
         ${website}
         ${email}
         ${twitter}
         ${telegram}
-        ${rss}
+<!--        ${rss}-->
       </div>
     `)
   }
